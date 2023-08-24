@@ -1,0 +1,9 @@
+@host=https://localhost:7027
+
+POST {{{host}}/api/AddProduct
+Content-Type: application/json
+
+{
+    "Name" : "Huyne",
+    "Sku" : "aaaa"
+}

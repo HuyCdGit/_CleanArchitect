@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "bHgU4AOmAG5d+xPHdqZVYdMT5M3+o/Ab72LoFyYtINM8Qp2JfvfWls8BWFF8hgbIN5JpD5qyBalViHnaVNsstA==",
+  "success": true,
+  "projectFilePath": "/Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Presentation/CleanArch.Presentation.csproj",
+  "expectedPackageFiles": [
+    "/Users/huynguyen/.nuget/packages/fluentvalidation/11.6.0/fluentvalidation.11.6.0.nupkg.sha512",
+    "/Users/huynguyen/.nuget/packages/fluentvalidation.dependencyinjectionextensions/11.6.0/fluentvalidation.dependencyinjectionextensions.11.6.0.nupkg.sha512",
+    "/Users/huynguyen/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/2.1.0/microsoft.extensions.dependencyinjection.abstractions.2.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}

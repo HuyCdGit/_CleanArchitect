@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "8MoGsYlcj01GmXEmGy7seUJGIsUhsbEfnKQAckEZ7JRR1Kmp59MykIfvZLqEWbW5fIAO7B+Zg8oREBcdHMS0OQ==",
+  "success": true,
+  "projectFilePath": "/Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Domain/CleanArch.Domain.csproj",
+  "expectedPackageFiles": [
+    "/Users/huynguyen/.nuget/packages/erroror/1.2.1/erroror.1.2.1.nupkg.sha512"
+  ],
+  "logs": []
+}

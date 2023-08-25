@@ -106,3 +106,6 @@
 /Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Api/obj/Debug/net6.0/ref/CleanArch.Api.dll
 /Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Api/bin/Debug/net6.0/Ardalis.GuardClauses.dll
 /Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Api/bin/Debug/net6.0/JetBrains.Annotations.dll
+/Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Api/bin/Debug/net6.0/Mapster.dll
+/Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Api/bin/Debug/net6.0/Mapster.Core.dll
+/Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Api/bin/Debug/net6.0/Mapster.DependencyInjection.dll

@@ -1,16 +1,16 @@
+using CleanArch.Api;
 using CleanArch.Application;
 using CleanArch.Infrastructure;
-using CleanArch.Presentation;
-using ZymLabs.NSwag.FluentValidation;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+//builder.Services.AddControllers();
 
 builder.Services.AddApplication()
                 .AddInfrastructure()
-                .AddPresentation()
+                .AddApi()
                 .AddPersistence(builder.Configuration);
 // builder.Services.AddHealthChecks()
 //             .AddDbContextCheck<CleanArchDbContext>();

@@ -1,14 +1,12 @@
 using CleanArch.Application.Common.ProductResults;
 using CleanArch.Application.Interfaces;
-using CleanArch.Application.Products.Command;
 using CleanArch.Application.Products.Command.Create;
 using CleanArch.Application.Products.Command.Delete;
 using CleanArch.Application.Products.Command.Update;
 using CleanArch.Application.Products.Queries;
 using CleanArch.Domain.Products;
 using CleanArch.Presentation.Common.Products;
-using ErrorOr;
-using JetBrains.Annotations;
+using MapsterMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -21,11 +19,13 @@ public class ProductController : ControllerBase
 {
     private readonly ICleanArchDbContext _cleanArchDbContext;
     private readonly ISender _sender;
+    private readonly IMapper _mapper;
 
-    public ProductController(ICleanArchDbContext cleanArchDbContext, ISender sender)
+    public ProductController(ICleanArchDbContext cleanArchDbContext, ISender sender, IMapper mapper)
     {
         _cleanArchDbContext = cleanArchDbContext;
         _sender = sender;
+        _mapper = mapper;
     }   
 
     [HttpPost("AddProduct")]
@@ -33,7 +33,7 @@ public class ProductController : ControllerBase
     {
         var command = new CreateProductCommand(new ProductId(Guid.NewGuid()),request.Name, request.Sku);
         var result =  await _sender.Send(command); 
-        return Ok(result);
+        return Ok(_mapper.Map<ProductResponse>(result));
     }
 
     [HttpDelete("DeleteProduct/{id:guid}")]

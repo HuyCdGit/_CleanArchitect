@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "12G5igYVo429eryK5PznLcPtR53Ef5L+E91w+CN4t72N0vkB/QWby+hpKNeCFty1qH2UkHCSX9kKx9MDExaN+w==",
+  "dgSpecHash": "35H6d4SWWA5OtfSH/NcwceucFxDsytJCTG4hVQDiqt1lrLkN6rOgUTHoikqxOFALXIl4kB0LrLpzwAWXfMgGMw==",
   "success": true,
   "projectFilePath": "/Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Api/CleanArch.Api.csproj",
   "expectedPackageFiles": [
@@ -12,6 +12,9 @@
     "/Users/huynguyen/.nuget/packages/fluentvalidation.dependencyinjectionextensions/11.6.0/fluentvalidation.dependencyinjectionextensions.11.6.0.nupkg.sha512",
     "/Users/huynguyen/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/huynguyen/.nuget/packages/jetbrains.annotations/2021.3.0/jetbrains.annotations.2021.3.0.nupkg.sha512",
+    "/Users/huynguyen/.nuget/packages/mapster/7.3.0/mapster.7.3.0.nupkg.sha512",
+    "/Users/huynguyen/.nuget/packages/mapster.core/1.2.0/mapster.core.1.2.0.nupkg.sha512",
+    "/Users/huynguyen/.nuget/packages/mapster.dependencyinjection/1.0.0/mapster.dependencyinjection.1.0.0.nupkg.sha512",
     "/Users/huynguyen/.nuget/packages/mediatr/12.1.1/mediatr.12.1.1.nupkg.sha512",
     "/Users/huynguyen/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",
     "/Users/huynguyen/.nuget/packages/microsoft.aspnetcore.cryptography.internal/6.0.21/microsoft.aspnetcore.cryptography.internal.6.0.21.nupkg.sha512",
@@ -87,8 +90,8 @@
     "/Users/huynguyen/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512",
     "/Users/huynguyen/.nuget/packages/system.objectmodel/4.0.12/system.objectmodel.4.0.12.nupkg.sha512",
     "/Users/huynguyen/.nuget/packages/system.reflection/4.3.0/system.reflection.4.3.0.nupkg.sha512",
-    "/Users/huynguyen/.nuget/packages/system.reflection.emit/4.0.1/system.reflection.emit.4.0.1.nupkg.sha512",
-    "/Users/huynguyen/.nuget/packages/system.reflection.emit.ilgeneration/4.0.1/system.reflection.emit.ilgeneration.4.0.1.nupkg.sha512",
+    "/Users/huynguyen/.nuget/packages/system.reflection.emit/4.3.0/system.reflection.emit.4.3.0.nupkg.sha512",
+    "/Users/huynguyen/.nuget/packages/system.reflection.emit.ilgeneration/4.3.0/system.reflection.emit.ilgeneration.4.3.0.nupkg.sha512",
     "/Users/huynguyen/.nuget/packages/system.reflection.emit.lightweight/4.0.1/system.reflection.emit.lightweight.4.0.1.nupkg.sha512",
     "/Users/huynguyen/.nuget/packages/system.reflection.extensions/4.0.1/system.reflection.extensions.4.0.1.nupkg.sha512",
     "/Users/huynguyen/.nuget/packages/system.reflection.primitives/4.3.0/system.reflection.primitives.4.3.0.nupkg.sha512",

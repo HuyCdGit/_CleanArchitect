@@ -1,3 +1,5 @@
+using System.Reflection;
+
 namespace CleanArch.Presentation.Common.Products;
 
-public record ProductResponse(Guid Id, string Name);
+public record ProductResponse(ProductIdDTO id ,string Name, string Sku);

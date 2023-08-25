@@ -15,7 +15,6 @@ public class Product{
     public string Name { get; private set; } = string.Empty;
    // public Money? Price { get; set; }
     public Sku Sku {get; private set;}
-    
     public void Update(string name, Sku sku)
     {
         Name = name;

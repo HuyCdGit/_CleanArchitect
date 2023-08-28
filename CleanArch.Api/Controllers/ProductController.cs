@@ -4,8 +4,10 @@ using CleanArch.Application.Products.Command.Create;
 using CleanArch.Application.Products.Command.Delete;
 using CleanArch.Application.Products.Command.Update;
 using CleanArch.Application.Products.Queries;
+using CleanArch.Domain.Common.Errors;
 using CleanArch.Domain.Products;
 using CleanArch.Presentation.Common.Products;
+using ErrorOr;
 using MapsterMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -14,8 +16,7 @@ using Microsoft.EntityFrameworkCore;
 namespace CleanArch.Api.Controllers;
 
 [Route("api")]
-[ApiController]
-public class ProductController : ControllerBase
+public class ProductController : ApiController
 {
     private readonly ICleanArchDbContext _cleanArchDbContext;
     private readonly ISender _sender;
@@ -32,8 +33,10 @@ public class ProductController : ControllerBase
     public async Task<IActionResult> AddProduct([FromBody]ProductRequest request)
     {
         var command = new CreateProductCommand(new ProductId(Guid.NewGuid()),request.Name, request.Sku);
-        var result =  await _sender.Send(command); 
-        return Ok(_mapper.Map<ProductResponse>(result));
+        var prodResult =  await _sender.Send(command); 
+        return prodResult.Match(
+            prodResult => Ok(_mapper.Map<ProductResponse>(prodResult)),
+            errors => Problem(errors));
     }
 
     [HttpDelete("DeleteProduct/{id:guid}")]

@@ -1,6 +1,6 @@
 using CleanArch.Domain.Products;
 
-namespace CleanArch.Application.Products.Common;
+namespace CleanArch.Application.Products.Common.Exceptions;
 
 public sealed class ProductNotFoundException : Exception
 {

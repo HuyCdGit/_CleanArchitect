@@ -1,5 +1,6 @@
 using CleanArch.Application.Data.Interfaces;
 using CleanArch.Application.Products.Common;
+using CleanArch.Application.Products.Common.Exceptions;
 using CleanArch.Domain.Products;
 using MediatR;
 

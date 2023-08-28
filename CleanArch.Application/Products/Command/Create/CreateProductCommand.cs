@@ -1,5 +1,6 @@
 using CleanArch.Application.Common.ProductResults;
 using CleanArch.Domain.Products;
+using ErrorOr;
 using MediatR;
 
 namespace CleanArch.Application.Products.Command.Create;
@@ -9,4 +10,4 @@ public record CreateProductCommand(
                                 , string Name
                                 , string Sku
                                 //, string Currency, decimal Amount
-                                ) : IRequest<ProductResult>;
+                                ) : IRequest<ErrorOr<ProductResult>>;

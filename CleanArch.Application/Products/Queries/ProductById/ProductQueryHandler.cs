@@ -1,8 +1,6 @@
-using Ardalis.GuardClauses;
 using CleanArch.Application.Common.ProductResults;
 using CleanArch.Application.Data.Interfaces;
-using CleanArch.Application.Interfaces;
-using CleanArch.Application.Products.Common;
+using CleanArch.Application.Products.Common.Exceptions;
 using MediatR;
 
 namespace CleanArch.Application.Products.Queries.ProductById;

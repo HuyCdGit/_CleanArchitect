@@ -1,5 +1,5 @@
 using System.Reflection;
-using CleanArch.Api.Errors;
+using CleanArch.Api.Common.Errors;
 using Mapster;
 using MapsterMapper;
 using Microsoft.AspNetCore.Mvc.Infrastructure;

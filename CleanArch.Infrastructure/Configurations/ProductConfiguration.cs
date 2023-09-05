@@ -8,6 +8,12 @@ internal class ProductConfiguration : IEntityTypeConfiguration<Product>
 {
     public void Configure(EntityTypeBuilder<Product> builder)
     {
+        ConfigureProductTable(builder);
+    }
+
+    public void ConfigureProductTable(EntityTypeBuilder<Product> builder)
+    {
+        builder.ToTable("Product");
         builder.HasKey(c => c.Id);
 
         builder.Property(c => c.Id).HasConversion(
@@ -22,9 +28,10 @@ internal class ProductConfiguration : IEntityTypeConfiguration<Product>
             value => Sku.Create(value)! 
         );
 
-        // builder.OwnsOne(c => c.Price, prirceBuilder =>
-        // {
-        //     prirceBuilder.Property(c => c.Currency).HasMaxLength(3);
-        // });
+        builder.OwnsOne(c => c.Price, prirceBuilder =>
+        {
+            prirceBuilder.Property(c => c.Currency).HasMaxLength(3);
+            
+        });
    }
 }

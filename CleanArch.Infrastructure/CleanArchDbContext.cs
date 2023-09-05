@@ -9,21 +9,17 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace CleanArch.Infrastructure;
-public class CleanArchDbContext : DbContext, ICleanArchDbContext
+public class CleanArchDbContext : IdentityDbContext<ApplicationUser> ,ICleanArchDbContext 
 {
+    public CleanArchDbContext(DbContextOptions<CleanArchDbContext> options) : base(options){}
     public DbSet<Customer> Customers => Set<Customer>();
 
     public DbSet<Order> Orders => Set<Order>();
 
     public DbSet<Product> Products => Set<Product>();
 
-   // public DbSet<LineItem> LineItems => Set<LineItem>();
+   public DbSet<LineItem> LineItems => Set<LineItem>();
 
-    public CleanArchDbContext(DbContextOptions options) : base(options)
-    {
-    }
-
-    
     protected override void OnModelCreating(ModelBuilder builder)
     {
         builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());

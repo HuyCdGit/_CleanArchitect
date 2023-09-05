@@ -2,9 +2,7 @@ using CleanArch.Domain.Products;
 
 namespace CleanArch.Application.Data.Interfaces;
 
-public interface IProductRespository
+public interface IProductRespository : IRespository<Product, ProductId>
 {
-     Task<Product> GetByIdAsync(ProductId entity);
 
-     Task<List<Product>> GetAllProduct();
 }

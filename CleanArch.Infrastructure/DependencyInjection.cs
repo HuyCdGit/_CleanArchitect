@@ -18,11 +18,14 @@ public static class DependencyInjection
     , IConfiguration configuration)
     {
         var conn = configuration.GetConnectionString("CleanArchDb");
-        services.AddDbContext<CleanArchDbContext>(opt => opt.UseSqlServer(conn));
-
+        //services.AddDbContext<ICleanArchDbContext,CleanArchDbContext>(opt => opt.UseSqlServer(conn));
+        services.AddDbContext<CleanArchDbContext>((sp, options) =>
+        {
+            options.UseSqlServer(conn);
+        });
         services.AddScoped<ICleanArchDbContext>(provider => provider.GetRequiredService<CleanArchDbContext>());
-
-        services.AddScoped(typeof(IRespository<>), typeof(Respository<>));
+        services.AddScoped<IUnitOfWork, UnitOfWork>();
+        services.AddScoped(typeof(IRespository<,>), typeof(Respository<,>));
         services.AddScoped(typeof(IProductRespository), typeof(ProductRespository));
         
         return services;

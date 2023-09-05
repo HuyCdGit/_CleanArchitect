@@ -1,13 +1,13 @@
-using CleanArch.Application;
-using CleanArch.Application.Data;
 using CleanArch.Application.Data.Interfaces;
-using CleanArch.Application.Interfaces;
+using CleanArch.Domain.Primitives;
 using CleanArch.Domain.Products;
 using Microsoft.EntityFrameworkCore;
 
 namespace CleanArch.Infrastructure.Persistence;
 
-public class Respository<TEntity> : IRespository<TEntity> where TEntity : class
+public class Respository<TEntity, TEntityId> 
+    where TEntity : Entity<TEntityId>
+    where TEntityId : class
 {
     private readonly CleanArchDbContext _dbContext;
 
@@ -26,9 +26,9 @@ public class Respository<TEntity> : IRespository<TEntity> where TEntity : class
         return await _dbContext.Set<TEntity>().ToListAsync();
     }
 
-    public async Task<TEntity?> GetByIdAsync(ProductId id)
+    public async Task<TEntity?> GetByIdAsync(TEntityId id)
     {
-        return await _dbContext.Set<TEntity>().FindAsync(id);
+        return await _dbContext.Set<TEntity>().SingleOrDefaultAsync(p => p.Id == id);
     }
 
     public IQueryable<TEntity> GetQueryable()
@@ -39,11 +39,6 @@ public class Respository<TEntity> : IRespository<TEntity> where TEntity : class
     public void Add(TEntity entity)
     {
         _dbContext.Set<TEntity>().Add(entity);
-    }
-
-    public Task<int> SaveChangeAsync(CancellationToken cancellationToken)
-    {
-        return _dbContext.SaveChangesAsync(cancellationToken);
     }
 
     public void Update(TEntity entity)

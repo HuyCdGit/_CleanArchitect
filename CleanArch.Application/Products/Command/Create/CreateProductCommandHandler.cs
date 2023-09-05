@@ -1,40 +1,41 @@
-using CleanArch.Application.Common.ProductResults;
+using CleanArch.Application.Common.Products;
 using CleanArch.Application.Data.Interfaces;
 using CleanArch.Domain.Common.Errors;
 using CleanArch.Domain.Products;
 using ErrorOr;
-using JetBrains.Annotations;
 using MediatR;
 
 namespace CleanArch.Application.Products.Command.Create
 {
     internal class CreateProductCommandHandler : IRequestHandler<CreateProductCommand, ErrorOr<ProductResult>>
     {
-        private readonly IRespository<Product> _respository;
-        private readonly IProductRespository _productRespository;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public CreateProductCommandHandler(IRespository<Product> respository, IProductRespository productRespository)
+        public CreateProductCommandHandler(IUnitOfWork unitOfWork)
         {
-            _respository = respository;
-            _productRespository = productRespository;
+            _unitOfWork = unitOfWork;
         }
 
         public async Task<ErrorOr<ProductResult>> Handle(CreateProductCommand request, CancellationToken cancellationToken)
         {
-            if(_productRespository.GetByIdAsync(request.id) is not null)
+            var newProductId = new ProductId(Guid.NewGuid());
+            
+            var check_product = await _unitOfWork.Products.GetByIDAsync(newProductId);
+
+            if(check_product is not null)
             {
                 return Errors.Product.DuplicateProduct;
             }
-            var newGuid = Guid.Parse("5E2AB0D2-F545-488A-A280-0CCE48F83027");
-            
+            //var newGuid = Guid.Parse("5E2AB0D2-F545-488A-A280-0CCE48F83027");
+
             var product = new Product(
-               new ProductId(newGuid),
+                newProductId,
                 request.Name,
-                //new Money(request.Currency, request.Amount),
-                Sku.Create(request.Sku)
+                Sku.Create(request.Sku),
+                new Money(request.Currency, request.Amount)
             );
-            _respository.Add(product);
-            await _respository.SaveChangeAsync(cancellationToken);
+            _unitOfWork.Products.Add(product);
+            await _unitOfWork.SaveChangeAsync(cancellationToken);
             return new ProductResult(product);
         }
     }

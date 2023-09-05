@@ -1,11 +1,11 @@
+/Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Presentation/bin/Debug/net6.0/CleanArch.Presentation.deps.json
+/Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Presentation/bin/Debug/net6.0/CleanArch.Presentation.dll
+/Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Presentation/bin/Debug/net6.0/CleanArch.Presentation.pdb
 /Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Presentation/obj/Debug/net6.0/CleanArch.Presentation.csproj.AssemblyReference.cache
 /Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Presentation/obj/Debug/net6.0/CleanArch.Presentation.GeneratedMSBuildEditorConfig.editorconfig
 /Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Presentation/obj/Debug/net6.0/CleanArch.Presentation.AssemblyInfoInputs.cache
 /Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Presentation/obj/Debug/net6.0/CleanArch.Presentation.AssemblyInfo.cs
 /Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Presentation/obj/Debug/net6.0/CleanArch.Presentation.csproj.CoreCompileInputs.cache
-/Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Presentation/bin/Debug/net6.0/CleanArch.Presentation.deps.json
-/Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Presentation/bin/Debug/net6.0/CleanArch.Presentation.dll
-/Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Presentation/bin/Debug/net6.0/CleanArch.Presentation.pdb
 /Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Presentation/obj/Debug/net6.0/CleanArch.Presentation.dll
 /Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Presentation/obj/Debug/net6.0/refint/CleanArch.Presentation.dll
 /Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Presentation/obj/Debug/net6.0/CleanArch.Presentation.pdb

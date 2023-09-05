@@ -25,7 +25,7 @@ public class ApiController : ControllerBase
             }
             return ValidationProblem(modelStateDictionary);
         }
-        //HttpContext.Items[HttpContextItemKeys.Errors] = errors;
+        HttpContext.Items[HttpContextItemKeys.Errors] = errors;
         var firstError = errors[0];
 
         var statusCode = firstError.Type switch

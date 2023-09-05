@@ -1,6 +1,6 @@
-using CleanArch.Application.Common.ProductResults;
+using CleanArch.Application.Common.Exceptions;
+using CleanArch.Application.Common.Products;
 using CleanArch.Application.Data.Interfaces;
-using CleanArch.Application.Products.Common.Exceptions;
 using MediatR;
 
 namespace CleanArch.Application.Products.Queries.ProductById;
@@ -15,11 +15,11 @@ internal class ProductQueryHandler : IRequestHandler<ProductQuery, ProductResult
 
     public async Task<ProductResult> Handle(ProductQuery request, CancellationToken cancellationToken)
     {
-        var check_product = await _productRespository.GetByIdAsync(request.Id);
+        var check_product = await _productRespository.GetByIDAsync(request.Id);
 
         if (check_product is null)
         {
-            throw new ProductNotFoundException(request.Id);
+            throw new NotFoundException(request.Id);
         }
         // Guard.Against.Null(check_product, "Something were wrong");
         return new ProductResult(check_product);

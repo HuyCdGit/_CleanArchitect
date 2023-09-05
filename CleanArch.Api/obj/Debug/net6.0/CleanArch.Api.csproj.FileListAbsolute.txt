@@ -5,12 +5,17 @@
 /Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Api/bin/Debug/net6.0/CleanArch.Api.runtimeconfig.json
 /Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Api/bin/Debug/net6.0/CleanArch.Api.dll
 /Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Api/bin/Debug/net6.0/CleanArch.Api.pdb
+/Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Api/bin/Debug/net6.0/Ardalis.GuardClauses.dll
 /Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Api/bin/Debug/net6.0/Azure.Core.dll
 /Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Api/bin/Debug/net6.0/Azure.Identity.dll
 /Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Api/bin/Debug/net6.0/ErrorOr.dll
 /Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Api/bin/Debug/net6.0/FluentValidation.dll
 /Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Api/bin/Debug/net6.0/FluentValidation.DependencyInjectionExtensions.dll
 /Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Api/bin/Debug/net6.0/Humanizer.dll
+/Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Api/bin/Debug/net6.0/JetBrains.Annotations.dll
+/Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Api/bin/Debug/net6.0/Mapster.dll
+/Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Api/bin/Debug/net6.0/Mapster.Core.dll
+/Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Api/bin/Debug/net6.0/Mapster.DependencyInjection.dll
 /Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Api/bin/Debug/net6.0/MediatR.dll
 /Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Api/bin/Debug/net6.0/MediatR.Contracts.dll
 /Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Api/bin/Debug/net6.0/Microsoft.AspNetCore.Cryptography.Internal.dll
@@ -104,8 +109,3 @@
 /Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Api/obj/Debug/net6.0/CleanArch.Api.pdb
 /Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Api/obj/Debug/net6.0/CleanArch.Api.genruntimeconfig.cache
 /Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Api/obj/Debug/net6.0/ref/CleanArch.Api.dll
-/Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Api/bin/Debug/net6.0/Ardalis.GuardClauses.dll
-/Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Api/bin/Debug/net6.0/JetBrains.Annotations.dll
-/Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Api/bin/Debug/net6.0/Mapster.dll
-/Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Api/bin/Debug/net6.0/Mapster.Core.dll
-/Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/CleanArch.Api/bin/Debug/net6.0/Mapster.DependencyInjection.dll

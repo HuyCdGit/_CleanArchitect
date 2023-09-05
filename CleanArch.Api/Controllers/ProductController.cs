@@ -1,13 +1,10 @@
-using CleanArch.Application.Common.ProductResults;
 using CleanArch.Application.Interfaces;
 using CleanArch.Application.Products.Command.Create;
 using CleanArch.Application.Products.Command.Delete;
 using CleanArch.Application.Products.Command.Update;
 using CleanArch.Application.Products.Queries;
-using CleanArch.Domain.Common.Errors;
 using CleanArch.Domain.Products;
 using CleanArch.Presentation.Common.Products;
-using ErrorOr;
 using MapsterMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -32,8 +29,12 @@ public class ProductController : ApiController
     [HttpPost("AddProduct")]
     public async Task<IActionResult> AddProduct([FromBody]ProductRequest request)
     {
-        var command = new CreateProductCommand(new ProductId(Guid.NewGuid()),request.Name, request.Sku);
-        var prodResult =  await _sender.Send(command); 
+        var Command = new CreateProductCommand(request.Name,
+                                               request.Sku,
+                                               request.Currency,
+                                               request.Amount);
+
+        var prodResult =  await _sender.Send(Command);
         return prodResult.Match(
             prodResult => Ok(_mapper.Map<ProductResponse>(prodResult)),
             errors => Problem(errors));
@@ -42,8 +43,15 @@ public class ProductController : ApiController
     [HttpDelete("DeleteProduct/{id:guid}")]
     public async Task<IActionResult> DeleteProduct(Guid id)
     {
-        await _sender.Send(new DeleteProductCommand(new ProductId(id)));
-        return NoContent();
+        try
+        {
+            await _sender.Send(new DeleteProductCommand(new ProductId(id)));
+            return NoContent();
+        }
+        catch (Exception e)
+        {
+           return NotFound(e.Message);
+        }
     }
 
     [HttpGet("GetProductById/{id:guid}")]
@@ -61,10 +69,18 @@ public class ProductController : ApiController
     }
 
     [HttpPut("UpdateProduct/{id:guid}")]
-    public async Task<ActionResult<ProductResult>> UpdateProduct(Guid id ,ProductRequest request)
+    public async Task<IActionResult> UpdateProduct(Guid id ,ProductRequest request)
     {
-        var command = new UpdateProductCommand(new ProductId(id) ,request.Name, Sku.Create(request.Sku));
-        var result = await _sender.Send(command);
-        return Ok(result);
+        var Command = new UpdateProductCommand(new ProductId(id),
+                                               request.Name,
+                                               Sku.Create(request.Sku),
+                                               request.Currency,
+                                               request.Amount);
+                                               
+        var prodResult = await _sender.Send(Command);
+
+        return prodResult.Match(
+            prodResult => Ok(_mapper.Map<ProductResponse>(prodResult)),
+            errors => Problem(errors));
     }
 }

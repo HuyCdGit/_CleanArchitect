@@ -9,6 +9,12 @@ internal class OrderConfiguration : IEntityTypeConfiguration<Order>
 {
     public void Configure(EntityTypeBuilder<Order> builder)
     {
+        ConfigureOrderTable(builder);
+    }
+
+    public void ConfigureOrderTable(EntityTypeBuilder<Order> builder)
+    {
+        builder.ToTable("Order");
         builder.HasKey(o => o.Id);
 
         builder.Property(c => c.Id).HasConversion(
@@ -21,8 +27,8 @@ internal class OrderConfiguration : IEntityTypeConfiguration<Order>
         .HasForeignKey(c => c.CustomerId)
         .IsRequired();
 
-        // builder.HasMany(o => o.LineItems)
-        // .WithOne()
-        // .HasForeignKey(li => li.OrderId);
+        builder.HasMany(o => o.LineItems)
+        .WithOne()
+        .HasForeignKey(li => li.OrderId);
     }
 }

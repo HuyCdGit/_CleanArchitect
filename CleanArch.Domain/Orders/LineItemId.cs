@@ -1,3 +1,3 @@
-// namespace CleanArch.Domain.Orders;
+namespace CleanArch.Domain.Orders;
 
-// public record LineItemId(Guid Value);
+public record LineItemId(Guid Value);

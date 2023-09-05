@@ -8,11 +8,10 @@ public class Order
 {
     private Order()
     { }
-    //public HashSet<LineItem> _LineItems => new();
+    public HashSet<LineItem> _LineItems => new();
     public OrderId Id { get; private set; }
     public CustomerId CustomerId { get; private set; }
-
-    //public IReadOnlyList<LineItem> LineItems => _LineItems.ToList();
+    public IReadOnlyList<LineItem> LineItems => _LineItems.ToList();
 
     public static Order Create(CustomerId customerId)
     {
@@ -23,15 +22,15 @@ public class Order
         };
         return order;
     }
-    // public void Add(ProductId productId, Money price)
-    // {
-    //     var lineItem = new LineItem(
-    //     new LineItemId(Guid.NewGuid())
-    //     , Id
-    //     , productId
-    //     , price);
+    public void Add(ProductId productId, Money price)
+    {
+        var lineItem = new LineItem(
+        new LineItemId(Guid.NewGuid())
+        , Id
+        , productId
+        , price);
 
-    //     _LineItems.Add(lineItem);
-    // }
+        _LineItems.Add(lineItem);
+    }
 
 }

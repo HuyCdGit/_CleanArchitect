@@ -1,32 +1,27 @@
+using CleanArch.Application.Common.Exceptions;
 using CleanArch.Application.Data.Interfaces;
-using CleanArch.Application.Products.Common;
-using CleanArch.Application.Products.Common.Exceptions;
-using CleanArch.Domain.Products;
 using MediatR;
 
 namespace CleanArch.Application.Products.Command.Delete;
 
 public class DeleteProductCommandHandler : IRequestHandler<DeleteProductCommand>
 {
-    private readonly IRespository<Product> _respository;
-    private readonly IProductRespository _productRespository;
+    private readonly IUnitOfWork _unitOfWork;
 
-    public DeleteProductCommandHandler(IRespository<Product> respository, IProductRespository productRespository)
+    public DeleteProductCommandHandler(IUnitOfWork unitOfWork)
     {
-        _respository = respository;
-        _productRespository = productRespository;
+        _unitOfWork = unitOfWork;
     }
 
     public async Task Handle(DeleteProductCommand request, CancellationToken cancellationToken)
     {
-        var check_product = await _productRespository.GetByIdAsync(request.Id);
+        var check_product = await _unitOfWork.Products.GetByIDAsync(request.Id);
 
         if(check_product is null)
         {
-            throw new ProductNotFoundException(request.Id);
+            throw new NotFoundException(request.Id);
         }
-        _respository.Delete(check_product);
-
-        await _respository.SaveChangeAsync(cancellationToken);
+        _unitOfWork.Products.Delete(check_product);
+        await _unitOfWork.SaveChangeAsync(cancellationToken);
     }
 }

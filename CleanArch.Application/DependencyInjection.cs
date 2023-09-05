@@ -1,5 +1,6 @@
 using System.Reflection;
 using CleanArch.Application.Common.Behaviors;
+using CleanArch.Application.Data.Interfaces;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;

@@ -1,4 +1,4 @@
-using CleanArch.Application.Common.ProductResults;
+using CleanArch.Application.Common.Products;
 using CleanArch.Domain.Products;
 using MediatR;
 

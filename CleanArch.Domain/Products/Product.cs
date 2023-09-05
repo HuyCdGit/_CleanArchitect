@@ -1,23 +1,27 @@
 using System.Runtime.CompilerServices;
+using CleanArch.Domain.Primitives;
 
 namespace CleanArch.Domain.Products;
 
-public class Product{
-    public Product(ProductId id, string name, Sku sku)//Money price,
+public class Product : Entity<ProductId>
+{
+    public Product(ProductId id, string name, Sku sku, Money price) : this(id, name, sku)
     {
-        Id = id;
+        Price = price;
+    }
+    private Product(ProductId id, string name, Sku sku)
+        : base(id)
+    {
         Name = name;
-        //Price = price;
         Sku = sku;
     }
-
-    public ProductId Id {get; private set;}
     public string Name { get; private set; } = string.Empty;
-   // public Money? Price { get; set; }
+    public Money Price { get; private set; }
     public Sku Sku {get; private set;}
-    public void Update(string name, Sku sku)
+    public void Update(string name, Sku sku, Money price)
     {
         Name = name;
         Sku = sku;
+        Price = price;
     }
 }

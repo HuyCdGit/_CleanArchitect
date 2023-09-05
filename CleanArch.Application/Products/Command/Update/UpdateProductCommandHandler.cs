@@ -1,35 +1,33 @@
-using CleanArch.Application.Common.ProductResults;
+using CleanArch.Application.Common.Exceptions;
+using CleanArch.Application.Common.Products;
 using CleanArch.Application.Data.Interfaces;
-using CleanArch.Application.Products.Common;
-using CleanArch.Application.Products.Common.Exceptions;
 using CleanArch.Domain.Products;
+using ErrorOr;
 using MediatR;
 
 namespace CleanArch.Application.Products.Command.Update;
 
-public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommand, ProductResult>
+public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommand, ErrorOr<ProductResult>>
 {
-    private readonly IRespository<Product> _respository;
-    private readonly IProductRespository _productRespository;
+    private readonly IUnitOfWork _unitOfWork;
 
-    public UpdateProductCommandHandler(IRespository<Product> respository, IProductRespository productRespository)
+    public UpdateProductCommandHandler(IUnitOfWork unitOfWork)
     {
-        _respository = respository;
-        _productRespository = productRespository;
+        _unitOfWork = unitOfWork;
     }
 
-    public async Task<ProductResult> Handle(UpdateProductCommand request, CancellationToken cancellationToken)
+    public async Task<ErrorOr<ProductResult>> Handle(UpdateProductCommand request, CancellationToken cancellationToken)
     {
-        var check_product = await _productRespository.GetByIdAsync(request.Id);
+        var check_product = await _unitOfWork.Products.GetByIDAsync(request.Id);
 
         if(check_product is null)
         {
-            throw new ProductNotFoundException(request.Id);
+            throw new NotFoundException(request.Id);
         }
-        check_product.Update(request.Name, request.Sku);
+        check_product.Update(request.Name, request.Sku, new Money(request.Currency, request.Amount));
 
-         _respository.Update(check_product);
-        await _respository.SaveChangeAsync(cancellationToken);
+         _unitOfWork.Products.Update(check_product);
+        await _unitOfWork.SaveChangeAsync(cancellationToken);
 
         return new ProductResult(check_product);
     }

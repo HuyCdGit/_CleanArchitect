@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "8xwMXW73tsannTROwV4jq57Uh02fr8ZWhV1DfsJe7IYOrZRc/iA3vFCTAv+3XJaO2SkkA4HentdXVcuKgTpBlg==",
+  "success": true,
+  "projectFilePath": "/Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/src/CleanArch.Domain/CleanArch.Domain.csproj",
+  "expectedPackageFiles": [
+    "/Users/huynguyen/.nuget/packages/erroror/1.2.1/erroror.1.2.1.nupkg.sha512",
+    "/Users/huynguyen/.nuget/packages/mediatr/12.1.1/mediatr.12.1.1.nupkg.sha512",
+    "/Users/huynguyen/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",
+    "/Users/huynguyen/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/6.0.0/microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "/Users/huynguyen/.nuget/packages/microsoft.netcore.app.ref/6.0.21/microsoft.netcore.app.ref.6.0.21.nupkg.sha512",
+    "/Users/huynguyen/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.21/microsoft.aspnetcore.app.ref.6.0.21.nupkg.sha512"
+  ],
+  "logs": []
+}

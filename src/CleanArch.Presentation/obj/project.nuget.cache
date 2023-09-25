@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "vufGNDo4HI6R8GR/Y19epnnxDZ5y6sQRhxgO7r/w1LDDIG8LTLqy3+MCvI8Qfx+x6B27PvInSnvGxeVtheraWA==",
+  "success": true,
+  "projectFilePath": "/Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/src/CleanArch.Presentation/CleanArch.Presentation.csproj",
+  "expectedPackageFiles": [
+    "/Users/huynguyen/.nuget/packages/fluentvalidation/11.6.0/fluentvalidation.11.6.0.nupkg.sha512",
+    "/Users/huynguyen/.nuget/packages/fluentvalidation.dependencyinjectionextensions/11.6.0/fluentvalidation.dependencyinjectionextensions.11.6.0.nupkg.sha512",
+    "/Users/huynguyen/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/2.1.0/microsoft.extensions.dependencyinjection.abstractions.2.1.0.nupkg.sha512",
+    "/Users/huynguyen/.nuget/packages/microsoft.netcore.app.ref/6.0.21/microsoft.netcore.app.ref.6.0.21.nupkg.sha512",
+    "/Users/huynguyen/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.21/microsoft.aspnetcore.app.ref.6.0.21.nupkg.sha512"
+  ],
+  "logs": []
+}

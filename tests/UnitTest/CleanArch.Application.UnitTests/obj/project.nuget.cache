@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "HCA1zlkyzeFlBT11iglbMkVoZUDokubtfWyp7gjRfnCBGRi1VfLlqCOVahYss7u4Ezxdxk4OhDa1FJFDuAzRXA==",
+  "dgSpecHash": "Ejm1LxSqsFRsxsuSZ3KUrkBvI8fM8/FO/iyYol/RvXfpuqbYRKpWUr2balPCahdEK8pZseim1vyPB2O5O5duBg==",
   "success": true,
   "projectFilePath": "/Users/huynguyen/Desktop/dotnetRest/CleanArchitecture/tests/UnitTest/CleanArch.Application.UnitTests/CleanArch.Application.UnitTests.csproj",
   "expectedPackageFiles": [

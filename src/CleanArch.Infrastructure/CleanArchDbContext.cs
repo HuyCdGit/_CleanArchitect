@@ -1,7 +1,7 @@
-﻿using System.Reflection;
-using CleanArch.Application.Interfaces;
+﻿using CleanArch.Application.Interfaces;
 using CleanArch.Domain.Common.Models.Interfaces;
 using CleanArch.Domain.Menu;
+using CleanArch.Domain.Products;
 using CleanArch.Infrastructure.Identity;
 using CleanArch.Infrastructure.Interceptor;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -22,10 +22,11 @@ public class CleanArchDbContext : IdentityDbContext<ApplicationUser>, ICleanArch
 
     //     public DbSet<Order> Orders => Set<Order>();
 
-    //     public DbSet<Product> Products => Set<Product>();
+         public DbSet<Product> Products => Set<Product>();
 
     //    public DbSet<LineItem> LineItems => Set<LineItem>();
 
+   // public DbSet<Menu> Products { get; set; }
     public DbSet<Menu> Menus { get; set; }
     protected override void OnModelCreating(ModelBuilder builder)
     {

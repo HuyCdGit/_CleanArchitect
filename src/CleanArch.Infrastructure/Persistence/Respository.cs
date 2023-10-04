@@ -37,6 +37,7 @@ public class Respository<TEntity, TEntityId>
     public void Add(TEntity entity)
     {
         _dbContext.Set<TEntity>().Add(entity);
+
     }
 
     public void Update(TEntity entity)

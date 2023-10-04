@@ -1,3 +1,3 @@
-// namespace CleanArch.Domain.Products;
+namespace CleanArch.Domain.Products;
 
-// public record ProductId(Guid Value);
+public record ProductId(Guid Value);

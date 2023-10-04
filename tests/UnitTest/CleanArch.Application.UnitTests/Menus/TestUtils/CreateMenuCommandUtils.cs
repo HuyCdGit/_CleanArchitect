@@ -27,8 +27,8 @@ public class CreateMenuCommandUtils
     public static List<MenuItemCommnad> CreateMenuItemCommand(int itemCount = 1) =>
             Enumerable.Range(0, itemCount)
                 .Select(index => new MenuItemCommnad(
-                    Constants.Menu.SectionNameFromIndex(index),
-                    Constants.Menu.SectionDesriptionFromIndex(index)))
+                    Constants.Menu.ItemNameFromIndex(index),
+                    Constants.Menu.ItemDescriptionFromIndex(index)))
                 .ToList();
 
 }

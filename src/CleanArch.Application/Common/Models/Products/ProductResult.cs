@@ -1,5 +1,9 @@
-// using CleanArch.Domain.Products;
+using CleanArch.Application.Products.Command.Create;
+using CleanArch.Domain.Products;
 
-// namespace CleanArch.Application.Common.Products;
+namespace CleanArch.Application.Common.Products;
 
-// public record ProductResult(Product product);
+public record ProductResult(Product product)
+{
+    
+}

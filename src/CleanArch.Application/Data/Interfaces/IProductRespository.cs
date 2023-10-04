@@ -1,8 +1,8 @@
-// using CleanArch.Domain.Products;
+using CleanArch.Domain.Products;
 
-// namespace CleanArch.Application.Data.Interfaces;
+namespace CleanArch.Application.Data.Interfaces;
 
-// public interface IProductRespository : IRespository<Product, ProductId>
-// {
+public interface IProductRespository : IRespository<Product, ProductId>
+{
 
-// }
+}

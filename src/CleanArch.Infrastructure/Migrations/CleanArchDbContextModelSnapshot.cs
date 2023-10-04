@@ -54,6 +54,25 @@ namespace CleanArch.Infrastructure.Migrations
                     b.ToTable("Menus", (string)null);
                 });
 
+            modelBuilder.Entity("CleanArch.Domain.Products.Product", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Sku")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Product", (string)null);
+                });
+
             modelBuilder.Entity("CleanArch.Infrastructure.Identity.ApplicationUser", b =>
                 {
                     b.Property<string>("Id")
@@ -318,6 +337,33 @@ namespace CleanArch.Infrastructure.Migrations
                         });
 
                     b.Navigation("Sections");
+                });
+
+            modelBuilder.Entity("CleanArch.Domain.Products.Product", b =>
+                {
+                    b.OwnsOne("CleanArch.Domain.Products.Money", "Price", b1 =>
+                        {
+                            b1.Property<Guid>("ProductId")
+                                .HasColumnType("uniqueidentifier");
+
+                            b1.Property<decimal>("Amount")
+                                .HasColumnType("decimal(18,2)");
+
+                            b1.Property<string>("Currency")
+                                .IsRequired()
+                                .HasMaxLength(3)
+                                .HasColumnType("nvarchar(3)");
+
+                            b1.HasKey("ProductId");
+
+                            b1.ToTable("Product");
+
+                            b1.WithOwner()
+                                .HasForeignKey("ProductId");
+                        });
+
+                    b.Navigation("Price")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

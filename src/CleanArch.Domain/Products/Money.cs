@@ -1,3 +1,3 @@
-// namespace CleanArch.Domain.Products;
+namespace CleanArch.Domain.Products;
 
-// public record Money (string Currency, decimal Amount);
+public record Money (string Currency, decimal Amount);

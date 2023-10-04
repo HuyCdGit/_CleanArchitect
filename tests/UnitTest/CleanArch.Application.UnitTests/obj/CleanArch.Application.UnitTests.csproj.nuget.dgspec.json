@@ -211,6 +211,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "ErrorOr": {
+              "target": "Package",
+              "version": "[1.2.1, )"
+            },
             "FluentAssertions": {
               "target": "Package",
               "version": "[6.12.0, )"

@@ -1,4 +1,3 @@
-using System;
 using CleanArch.Application.Menus.Command.Create;
 using CleanArch.Domain.Menu;
 using CleanArch.Domain.Menu.Entities;
@@ -10,7 +9,7 @@ public static class MenuExtensions
     public static void validateCreatedFrom(this Menu menu, CreateMenuCommand command)
     {
         menu.Name.Should().Be(command.Name);
-        menu.Name.Should().Be(command.Description);
+        menu.Description.Should().Be(command.Description);
         menu.Sections.Should().HaveSameCount(command.MenuSections);
         menu.Sections.Zip(command.MenuSections).ToList().ForEach(pair => ValidateSection(pair.First, pair.Second));
     }
